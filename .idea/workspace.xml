@@ -31,6 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -58,6 +59,7 @@
       <workItem from="1584948593070" duration="1187000" />
       <workItem from="1585036750928" duration="1274000" />
       <workItem from="1585117691825" duration="3231000" />
+      <workItem from="1585203857603" duration="1421000" />
     </task>
     <servers />
   </component>

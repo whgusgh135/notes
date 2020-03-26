@@ -96,3 +96,32 @@ class Permanent extends Employee {
 // Employee class have getSalaryDetails() and Permanent, Contract classes also have getSalaryDetails() function.
 // Means Base class getSalaryDetails() behaviour is changed by the Subtype classes(derived class).
 // It should not be done according to the LSP
+
+
+// INTERFACE SEGREGATION PRINCIPLE
+// Clients should not be forced to depend upon
+// interfaces that they do not use.
+// If interface gets too big, break it up to smaller interfaces
+
+// Bad way
+class badInterface {
+    calculate();
+    print();
+}
+
+class badClass extends badInterface {
+    // what if this class doesn't need print() method???
+}
+
+// Good way
+class calculateInterface {
+    calculate();
+}
+
+class printInterface {
+    print();
+}
+
+class goodClass extends calculateInterface, printInterface {
+    // can extend multiple interfaces so just get the ones needed
+}
