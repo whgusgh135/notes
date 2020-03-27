@@ -125,3 +125,52 @@ class printInterface {
 class goodClass extends calculateInterface, printInterface {
     // can extend multiple interfaces so just get the ones needed
 }
+
+
+// DEPENDENCY INVERSION PRINCIPLE
+// High-level modules should not depend on low-level modules
+// Both should depend on abstractions
+// Abstractions should not depend on details
+// Details should depend on abstractions
+
+// Bad way
+// Low-level
+function Wheels() {
+    this.action = () => log("The wheels go 'round and 'round.");
+    log("Made some wheels.");
+}
+
+function Engine() {
+    this.action = () => log("The pistons fire up and down.");
+    log("Made some pistons.");
+}
+
+// High-level
+function Car() {
+    this.wheels = new Wheels();
+    this.engine = new Engine();
+    this.action = () => {
+        this.wheels.action();
+        this.engine.action();
+        log("The car drives by.");
+    };
+    log("Made a car.");
+}
+
+// Good way
+class CarInterface {
+    action();
+}
+class WheelsGood extends CarInterface {}
+class EngineGood extends CarInterface {}
+
+class Car {
+    constructor(wheels, engine) {
+        this.wheels = wheels;
+        this.engine = engine;
+    }
+    action () {
+        this.wheels.action();
+        this.engine.action();
+    }
+}
